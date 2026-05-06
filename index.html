@@ -61,7 +61,71 @@
         #imgs{
             column-count:2;
             gap:10px;
-        }
+        } 
+
+                    #viewer{
+                position: fixed;
+                text-align: center;
+                padding:0;
+                width: 96%;
+                background:rgba(0,10,10,0.5);
+                height: 95vh;
+                top:50%;
+                left:50%;
+                transform: translate(-50%,-50%);
+                border-radius:10px;
+                transition :all 1s ease;
+                display:none;
+                z-index: 9999;
+           }
+           
+           #viewer.active{
+               animation: anim 0.6s ease;
+               display :block ;
+           }
+           
+           #viewer.close{
+               display: none;
+           }
+           
+           @keyframes anim {
+               from{
+                   
+                   opacity:0;
+               }to{
+                   opacity:1;
+               }
+           }
+            
+            #viewer img{
+                width:90%;
+                max-width: 400px;
+                height : auto ;
+                border-radius:10px;
+                max-height:90vh;
+            }
+            
+            #viewer button{
+                padding: 10px 20px;
+                margin: 20px;
+                outline: none;
+                border-radius:10px;
+                font-weight: bold;
+                border: none;
+                font-size: 20px;
+                
+            }
+            
+            #viewer a {
+                text-decoration: none;
+                margin-top: 10pc;
+                outline: none;
+                border-radius:10px;
+                font-weight: bold;
+                border: none;
+                font-size: 20px;
+                
+            }
 
     </style>
 </head>
@@ -139,6 +203,12 @@
         <img src="picture.png" alt="cold-harts"/>
         <img src="group-pic.png" alt="friends"/>
 </div>
+
+            <div id="viewer">
+            <button id="close">close</button>
+            <img id="imgC"/>
+            <a href="" id="download">Download</a>
+            </div>
 
 <section>
 <h2>Contact</h2>
